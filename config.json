@@ -1,0 +1,22 @@
+{
+    "vid_feature": "frame_feat",
+    "subtitles"  : "vlep/vlep_subtitles.json",
+    "train_anno" : "vlep/vlep_train_release.jsonl",
+    "val_anno"   : "vlep/vlep_val_release.jsonl",
+    "test_anno"  : "vlep/vlep_test_release.jsonl",
+  
+    "train_dialogue": true,
+    
+    "nhead": 8,
+    "dropout": 0.1,
+
+    "train_batch_size": 16,
+    "test_batch_size": 64,
+    "base_epochs": 3,
+    "fine_epochs": 3,
+    "base_lr": 1e-4,
+    "fine_lr": 1e-5,
+    "warmup": 0.1,
+    "grad_accum": 1,
+    "num_workers": 8
+}
