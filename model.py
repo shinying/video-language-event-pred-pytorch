@@ -5,7 +5,6 @@ from torch.nn.modules.dropout import Dropout
 from transformers import RobertaModel
 import torch
 import torch.nn as nn
-import torchvision
 
 
 class PositionalEncoding(nn.Module):
@@ -77,7 +76,7 @@ class VLEPModel(nn.Module):
         t1 = self.text_encoder(input_ids=batch['text1_ids'], attention_mask=batch['text1_masks']).last_hidden_state
         t2 = self.text_encoder(input_ids=batch['text2_ids'], attention_mask=batch['text2_masks']).last_hidden_state
        
-	# For diaglog-only 
+	    # For dialogue-only 
         # t1 = torch.cat([t1.pooler_output.unsqueeze(1), t1.last_hidden_state[:, 1:]], dim=1)
         # t2 = torch.cat([t2.pooler_output.unsqueeze(1), t2.last_hidden_state[:, 1:]], dim=1)
         # x = torch.stack([t1, t2], dim=1)
